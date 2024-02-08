@@ -29,6 +29,6 @@
 #
 FROM eclipse-temurin:17-jre-jammy 
 # ARG JAR_FILE=/usr/app/target/*.jar
-COPY --from=build =/usr/app/target/*.jarE /app/runner.jar
+COPY --from=build /target/*.jar .jar
 EXPOSE 8080
-ENTRYPOINT java -jar /app/runner.jar
+ENTRYPOINT ["java","-jar","demo.jar"]
